@@ -1,0 +1,60 @@
+<div class="col-md-9">
+  <div>
+    <ol class="breadcrumb">
+      <li><a href="#">Home</a></li>
+      <li class="active">Electronics</li>
+    </ol>
+  </div>
+
+  <div class="row">
+
+    <form [formGroup]="productForm" (ngSubmit)="submitProduct()">
+
+
+      <div class="form-group"
+        [ngClass]="{'has-error':!productForm.controls['name'].valid && productForm.controls['name'].touched}">
+        <label for="productName" class="col-sm-2 control-label"></label>
+        <input type="text" class="form-control" formControlName="name" placeholder="Name" value="{{productName}}">
+        <div class="btn-danger" *ngIf="!productForm.controls['name'].valid && productForm.controls['name'].touched">
+          you must specify a product name
+        </div>
+      </div>
+
+      <div class="form-group"
+        [ngClass]="{'has-error':!productForm.controls['image'].valid && productForm.controls['image'].touched}">
+        <label for="productImage" class="col-sm-2 control-label"></label>
+        <input type="text" class="form-control" formControlName="image" placeholder="path image" value="{{productImage}}">
+        <div class="btn-danger" *ngIf="!productForm.controls['image'].valid && productForm.controls['image'].touched">
+          you must specify a product image
+        </div>
+      </div>
+      <div class="form-group"
+        [ngClass]="{'has-error':!productForm.controls['category'].valid && productForm.controls['category'].touched}">
+        <label for="productCategory" class="col-sm-2 control-label"></label>
+        <input type="text" class="form-control" formControlName="category" placeholder="category name  "value="{{productCategory}}" >
+        <div class="btn-danger"
+          *ngIf="!productForm.controls['category'].valid && productForm.controls['category'].touched">
+          you must specify a product category
+        </div>
+      </div>
+      <div class="form-group"
+        [ngClass]="{'has-error':!productForm.controls['price'].valid && productForm.controls['price'].touched}">
+        <label for="productPrice" class="col-sm-2 control-label"></label>
+        <input type="text" class="form-control" formControlName="price" placeholder="price" value="{{productPrice}}">
+  
+      </div>
+      <div class="form-group"
+        [ngClass]="{'has-error':!productForm.controls['price'].valid && productForm.controls['description'].touched}">
+        <label for="productDescription" class="col-sm-2 control-label"></label>
+        <input type="text" class="form-control" formControlName="description" placeholder="description" value="{{productDescription}}">
+        <div class="btn-danger"
+          *ngIf="!productForm.controls['description'].valid && productForm.controls['description'].touched">
+          you must specify a product description
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit Request</button>
+
+    </form>
+  </div>
+
+</div>
