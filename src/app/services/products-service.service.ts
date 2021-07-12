@@ -1,12 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
-import { Product } from '../shared/models/products';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductsServiceService {
-  private products: Array<Product> = [];
+ // private products: Array<Product> = [];
   private header:HttpHeaders;
   constructor(public http:HttpClient) {
     this.header = new HttpHeaders();
@@ -48,4 +47,24 @@ export class ProductsServiceService {
     ];
     return this.products;
   }
+  getProdductOncart()
+  {
+    let ids:any = localStorage.getItem('products')
+    let query = {
+      "query": {
+          "bool": {
+              "must": [
+                  {
+                      "ids" : {
+                          "values" : JSON.parse(ids)
+                      }
+                  }
+              ]
+          }
+      }
+    }
+    return this.http.post("/epi/product/_search",query,{headers:this.header});
+
+}
+
 }

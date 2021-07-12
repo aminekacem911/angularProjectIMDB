@@ -30,13 +30,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/assets/css/bootstrap.css",
-              "src/assets/css/font-awesome.min.css",
-              "src/assets/css/style.css"
+
             ],
             "scripts": [
-              "src/assets/js/jquery-1.10.2.js",
-              "src/assets/js/bootstrap.js"
+             
             ]
           },
           "configurations": {

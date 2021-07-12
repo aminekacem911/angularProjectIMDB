@@ -1,1 +1,73 @@
-welcome !
+
+<style>
+
+main {
+  height: auto;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-image: url("../../assets/bg.jpg");
+}
+
+</style>
+<main>
+
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+  <section id="contact" class="contact">
+    <div class="container" data-aos="fade-up">
+      <div class="search">
+        <input class="search_input" type="text" [(ngModel)]="key" (ngModelChange)="searchMovie()"
+          placeholder="Search here..."> <input type="submit" value="search" class="search_icon">
+      </div><br><br>
+      <div *ngIf="key" class="row">
+
+        <div   class="col-xl-6 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+          <div class="my-card"> <img class="my-card-img" [src]="movie.image" />
+            <div class="my-card-body trainer-card-body">
+              <h5>{{ movie.title }}</h5> rating : <i class="fa fa-star">{{ movie.rating }}</i>
+              <p>{{ movie.description }}</p>
+              <br>
+
+              <div class="social-icons"> <a href="#"><i class="fa fa-tumblr"></i></a> <a href="#">
+                  <i class="fa fa-twitter"></i></a> </div> <a href="{{ movie.trailer }}" class="my-card-btn">View
+                trailer</a>
+            </div>
+
+          </div>
+        </div>
+        <div class="col-xl-6 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+          <div class="row">
+            <!-- <div *ngFor="let actor of movie.actors" class="col-md-4">
+              <div class="bg-white p-3 text-center rounded box">
+                <h5 class="mt-3 name">{{ actor.actor }}</h5>
+
+                <div class="mt-4">
+                  <h6 class="v-profile">{{ actor.character }}</h6>
+                </div>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+      <div class="ads_sponsors">
+        <div class="row">
+          <div *ngFor="let link of movie.movielink"  class="col-xl-4 col-md-4 d-flex align-items-stretch">
+
+
+            <iframe frameborder="0" width="640" height="360"
+            [src]="link | safe"
+            allowfullscreen
+            allow="autoplay; fullscreen">
+        </iframe>
+            <!-- <input type="text" value="{{movie}}"> -->
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+  </section>

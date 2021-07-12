@@ -1,0 +1,155 @@
+
+main {
+  height: auto;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-image: url("../../assets/bg.jpg");
+}
+
+
+.ads_sponsors div iframe{
+
+  float: left;
+
+  padding: 5px;
+}
+
+
+.search {
+  margin-bottom: auto;
+  margin-top: auto;
+  height: 70px;
+  background-color: #fff;
+  border-radius: 40px;
+  padding: 10px
+}
+.search_input {
+  color: black;
+  border: 0;
+  outline: 0;
+  background: none;
+  width: 0;
+  margin-top: 5px;
+  caret-color: transparent;
+  line-height: 40px;
+  transition: width 0.4s linear
+}
+.search .search_input {
+  padding: 0 10px;
+  width: 550px;
+  caret-color: red;
+  transition: width 0.4s linear
+}
+.search:hover>.search_icon {
+  background: red;
+  color: #fff
+}
+.search_icon {
+  height: 50px;
+  width: 50px;
+  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: white;
+  background-color: black
+}
+a:link {
+  text-decoration: none
+}
+
+
+
+.my-card {
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  background-color: #fff;
+  background-clip: border-box;
+  box-shadow: 0px 0px 8px;
+  margin-bottom: 28px;
+  border-radius: 35px 0;
+  overflow: hidden;
+  transition: .5s
+}
+
+.my-card:hover {
+  box-shadow: 0px 0px 8px #c81a3b
+}
+
+.my-card img {
+  max-height: 250px;
+  width: 100%
+}
+
+.my-card-body {
+  padding: 20px;
+  margin-bottom: 20px
+}
+
+.my-card-body h5 {
+  text-transform: capitalize;
+  line-height: 25px;
+  font-size: 25px
+}
+
+.my-card-body p {
+  margin: 10px 0;
+  color: #f7941d
+}
+
+
+
+
+.my-card-btn {
+  color: rgb(231, 231, 231);
+  background-color: #c81a3b;
+  padding: 10px 28px;
+  text-decoration: none;
+  text-transform: capitalize;
+  border-radius: 10px 0;
+  transition: .5s
+}
+
+.my-card-btn:hover {
+  color: rgb(15, 15, 15)
+}
+
+h6 {
+  font-size: 12px !important
+}
+
+h5 {
+  font-size: 15px !important
+}
+
+img {
+  vertical-align: bottom
+}
+
+.download {
+  margin-top: 3px
+}
+
+.card-footer {
+  border: none !important;
+  background-color: #fff;
+  cursor: pointer;
+  padding-top: 0
+}
+
+.card-body {
+  padding-bottom: 0
+}
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap');
+
+body {
+    background-color: #eee
+}
+
