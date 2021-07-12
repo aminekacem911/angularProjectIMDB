@@ -53,8 +53,19 @@ main {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
+
   color: white;
   background-color: black
+}
+@media screen and (max-width: 770px) {
+  .search_icon {
+    visibility: hidden;
+    clear: both;
+    float: left;
+    margin: 10px auto 5px 20px;
+    width: 28%;
+    display: none;
+  }
 }
 a:link {
   text-decoration: none

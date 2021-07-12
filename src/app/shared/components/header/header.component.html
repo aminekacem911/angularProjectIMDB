@@ -8,16 +8,25 @@
 
               <li class="nav-item"> <a class="nav-link" href="/home#contact">contact</a> </li>
           </ul>
-          <div class="d-flex flex-column sim">
+          <div *ngIf="!logged"class="d-flex flex-column sim">
+
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
               Sign In
             </button>
 
              </div>
+             <div *ngIf="logged"class="d-flex flex-column sim">
+
+              <button type="submit"  class="btn btn-danger" >
+                logout
+              </button>
+
+               </div>
       </div>
   </div>
 </nav>
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+
+<div class="modal fade" id="exampleModal"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
   aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -27,15 +36,15 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form class="form-signin">
+      <form [formGroup]="loginForm" (ngSubmit)="submitLogin()" class="form-signin">
       <div class="modal-body">
 
-        <input type="text" class="form-control" name="username" placeholder="Email Address" required="" autofocus="" />
-        <input type="password" class="form-control" name="password" placeholder="Password" required="" />
+        <input type="text" class="form-control" formControlName="username" placeholder="username" required="" autofocus="" />
+        <input type="password" class="form-control" formControlName="password" placeholder="Password" required="" />
       </div>
       <div class="modal-footer">
 
-        <button type="button" class="btn btn-primary">Login</button>
+        <button type="submit"  class="btn btn-primary">Login</button>
       </div>
       </form>
     </div>
