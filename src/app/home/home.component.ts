@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
     year: "",
     trailer: "",
     rating: "",
-    actors:"",
+    actors: [],
     movielink:""
   };
 
@@ -53,9 +53,11 @@ export class HomeComponent implements OnInit {
       this.movie.rating =data['result']['rating'];
       this.movie.actors =data['result']['cast'];
       this.movie.movielink =data['movies'];
-      console.log(this.movie.actors)
+      console.log('actors',this.movie.actors);
+
 
     });
+
   }
   ngOnInit(): void {
     // this.setting = this.SettingService.getSetting();
